@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <?php include('partials/header.php'); ?>
 
 <div class="flex">
@@ -10,22 +19,22 @@
 <!-- Stats -->
 <div class="grid sm:grid-cols-4 gap-4 mb-6">
 
-    <div class="bg-gradient-to-r from-slate-800 to-teal-400 text-white p-6 rounded-xl shadow">
+    <div class="bg-gradient-to-r from-slate-800 to-teal-400 text-white p-6 rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition duration-300 flex justify-between items-center sm:block">
         <h3>Total Books</h3>
         <p class="text-3xl font-bold">120</p>
     </div>
 
-    <div class="bg-yellow-400 text-white p-6 rounded-xl shadow">
+    <div class="bg-yellow-400 text-white p-6 rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition duration-300 flex justify-between items-center sm:block">
         <h3>Assigned</h3>
         <p class="text-3xl font-bold">45</p>
     </div>
 
-    <div class="bg-green-500 text-white p-6 rounded-xl shadow">
+    <div class="bg-green-500 text-white p-6 rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition duration-300 flex justify-between items-center sm:block">
         <h3>Returned</h3>
         <p class="text-3xl font-bold">40</p>
     </div>
 
-    <div class="bg-blue-500 text-white p-6 rounded-xl shadow">
+    <div class="bg-blue-500 text-white p-6 rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition duration-300 flex justify-between items-center sm:block">
         <h3>Users</h3>
         <p class="text-3xl font-bold">30</p>
     </div>
@@ -58,3 +67,5 @@
 
 </main>
 </div>
+
+<?php include('partials/footer.php'); ?>

@@ -1,3 +1,8 @@
+<?php
+session_start();
+include 'db.php';
+?>
+
 <?php include('partials/header.php'); ?>
 <div class="flex">
 <?php include('partials/sidebar.php'); ?>
@@ -17,24 +22,42 @@
 <table class="w-full text-center">
 <thead class="bg-gray-100">
 <tr>
-<th class="p-3">Name</th>
-<th class="p-3">Email</th>
-<th class="p-3">Role</th>
-<th class="p-3">Action</th>
+    <th class="p-3">#</th>
+    <th class="p-3">Name</th>
+    <th class="p-3">Address</th>
+    <th class="p-3">ID</th>
+    <th class="p-3">Department</th>
+    <th class="p-3">Email</th>
+    <th class="p-3">Phone</th>
+    <th class="p-3">Role</th>
+    <th class="p-3">Action</th>
 </tr>
 </thead>
 
 <tbody>
-<tr>
-<td class="p-3">John Doe</td>
-<td class="p-3">john@mail.com</td>
-<td class="p-3">Admin</td>
+    <?php
+    $res=mysqli_query($conn,"SELECT * FROM users");
+    $index = 0;
+    while($row=mysqli_fetch_assoc($res)){
+        $index++;
+    ?>
+        <tr class="hover:bg-gray-50">
 
-<td class="p-3 space-x-2">
-<a href="edit_user.php" class="bg-yellow-400 px-2 py-1 rounded">Edit</a>
-<button class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
-</td>
-</tr>
+        <td class="p-3"><?php echo $index ?></td>
+        <td class="p-3"><?php echo $row['name']?? '-'; ?></td>
+        <td class="p-3"><?php echo $row['address']?? '-'; ?></td>
+        <td class="p-3"><?php echo $row['student_id']?? '-'; ?></td>
+        <td class="p-3"><?php echo $row['department']?? '-'; ?></td>
+        <td class="p-3"><?php echo $row['email']?? '-'; ?></td>
+        <td class="p-3"><?php echo $row['phone']?? '-'; ?></td>
+        <td class="p-3"><?php echo $row['role']?? '-'; ?></td>
+
+        <td class="p-3 space-x-2 flex">
+            <a href="add_user.php?id=<?php echo $row['id']; ?>" class="bg-yellow-400 px-2 py-1 rounded">Edit</a>
+            <a href="delete_user.php?id=<?php echo $row['id']; ?>" class="bg-red-500 text-white px-2 py-1 rounded">Delete</a>
+        </td>
+        </tr>
+    <?php } ?>
 </tbody>
 
 </table>

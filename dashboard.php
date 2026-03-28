@@ -1,10 +1,9 @@
 <?php
 session_start();
-
 if(!isset($_SESSION['user'])){
     header("Location: login.php");
-    exit();
 }
+include 'db.php';
 ?>
 
 <?php include('partials/header.php'); ?>
@@ -12,7 +11,7 @@ if(!isset($_SESSION['user'])){
 <div class="flex">
 <?php include('partials/sidebar.php'); ?>
 
-<main class="flex-1 p-6">
+<main class="flex-1 p-6 min-h-[calc(100vh-128px)]">
 
 <h1 class="text-2xl font-semibold mb-6">📊 Dashboard</h1>
 
@@ -21,7 +20,13 @@ if(!isset($_SESSION['user'])){
 
     <div class="bg-gradient-to-r from-slate-800 to-teal-400 text-white p-6 rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition duration-300 flex justify-between items-center sm:block">
         <h3>Total Books</h3>
-        <p class="text-3xl font-bold">120</p>
+        <p class="text-3xl font-bold">
+        <?php
+        $res=mysqli_query($conn,"SELECT COUNT(*) as total FROM books");
+        $row=mysqli_fetch_assoc($res);
+        echo $row['total'];
+        ?>
+        </p>
     </div>
 
     <div class="bg-yellow-400 text-white p-6 rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition duration-300 flex justify-between items-center sm:block">
@@ -36,7 +41,13 @@ if(!isset($_SESSION['user'])){
 
     <div class="bg-blue-500 text-white p-6 rounded-xl shadow hover:-translate-y-1 hover:shadow-xl transition duration-300 flex justify-between items-center sm:block">
         <h3>Users</h3>
-        <p class="text-3xl font-bold">30</p>
+        <p class="text-3xl font-bold">
+            <?php
+            $res=mysqli_query($conn,"SELECT COUNT(*) as total FROM users");
+            $row=mysqli_fetch_assoc($res);
+            echo $row['total'];
+            ?>
+        </p>
     </div>
 
 </div>

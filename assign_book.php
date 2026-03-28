@@ -1,3 +1,8 @@
+<?php
+session_start();
+include 'db.php';
+?>
+
 <?php include('partials/header.php'); ?>
 <div class="flex">
 <?php include('partials/sidebar.php'); ?>

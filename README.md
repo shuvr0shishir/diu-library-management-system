@@ -208,6 +208,8 @@ This project demonstrates:
 BSc in CSE | DIU
 Aspiring Full Stack Developer 🚀
 
+🔗 **GitHub Repo:** https://github.com/shuvr0shishir/diu-library-management-system
+
 ---
 
 ## ⭐ Support

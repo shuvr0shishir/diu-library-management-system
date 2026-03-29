@@ -3,27 +3,20 @@ session_start();
 
 include 'db.php';
 
-// delete first when edit then add = edit
-if(isset($_GET['id']) && is_numeric($_GET['id'])){
-    $id = $_GET['id'];
-    mysqli_query($conn,"DELETE FROM users WHERE id=$id");
-}
-
-
 if($_POST){
-$name=$_POST['name'];
-$address=$_POST['address'];
-$student_id=$_POST['student_id'];
-$department=$_POST['department'];
-$email=$_POST['email'];
-$phone=$_POST['phone'];
-$role=$_POST['role'];
-$password=$_POST['password'];
+    $name=$_POST['name'];
+    $address=$_POST['address'];
+    $student_id=$_POST['student_id'];
+    $department=$_POST['department'];
+    $email=$_POST['email'];
+    $phone=$_POST['phone'];
+    $role=$_POST['role'];
+    $password=$_POST['password'];
 
-mysqli_query($conn,"INSERT INTO users(name,address,student_id,department,email,phone,role,password)
-VALUES('$name','$address','$student_id','$department','$email','$phone','$role','$password')");
+    mysqli_query($conn,"INSERT INTO users(name,address,student_id,department,email,phone,role,password)
+    VALUES('$name','$address','$student_id','$department','$email','$phone','$role','$password')");
 
-header("Location: users.php");
+    header("Location: users.php");
 }
 ?>
 
@@ -33,7 +26,7 @@ header("Location: users.php");
 
 <?php include('partials/sidebar.php'); ?>
 
-<main class="flex-1 p-4 md:p-6">
+<main class="flex-1 p-4 md:p-6 min-h-[calc(100vh-128px)]">
 
 <h1 class="text-2xl font-semibold mb-6">👤 Add User</h1>
 
@@ -89,3 +82,5 @@ header("Location: users.php");
 
 </body>
 </html>
+
+<?php include('partials/footer.php'); ?>

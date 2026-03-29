@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'db.php';
-
+header("Location: login.php");
 if($_POST){
     $email = $_POST['email'];
     $password = $_POST['password'];

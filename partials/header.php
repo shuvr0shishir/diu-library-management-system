@@ -17,7 +17,7 @@ include 'db.php';
 <body class="bg-gray-100">
 
 <!-- Navbar -->
-<header class="bg-gradient-to-r from-slate-800 to-teal-400 text-white flex justify-between items-center px-4 py-3 shadow">
+<header class="bg-gradient-to-r from-slate-800 to-teal-400 text-white flex justify-between items-center px-4 py-2 shadow">
 
     <!-- Left -->
     <div class="flex items-center gap-3">

@@ -29,7 +29,7 @@ header("Location: books.php");
 
     <?php include('partials/sidebar.php'); ?>
 
-    <main class="flex-1 p-6">
+    <main class="flex-1 p-6 min-h-[calc(100vh-128px)]">
 
         <!-- Page Title -->
         <h1 class="text-2xl font-semibold mb-6">📚 Add New Book</h1>
@@ -59,6 +59,7 @@ header("Location: books.php");
                     <select name="category" class="w-full p-3 border rounded-lg">
                         <option selected disabled hidden>Select Category</option>
                         <option>Classic</option>
+                        <option>Fantasy</option>
                         <option>Fiction</option>
                         <option>Finance</option>
                         <option>Self-help</option>
@@ -89,3 +90,5 @@ header("Location: books.php");
 
 </body>
 </html>
+
+<?php include('partials/footer.php'); ?>

@@ -4,7 +4,7 @@ class="fixed inset-0 bg-black/40 hidden z-40 md:hidden"></div>
 
 <!-- Sidebar -->
 <div id="sidebar"
-class="fixed md:static top-0 left-0 h-screen w-64 
+class="fixed md:static top-0 left-0 min-h-screen w-64 
 bg-gradient-to-b from-slate-700 to-slate-900 text-white p-4 
 transform -translate-x-full md:translate-x-0 transition duration-300 z-50">
 

@@ -5,9 +5,13 @@ This project provides an admin dashboard to manage books, users, and transaction
 
 ---
 
-🔗 **Live Demo 1:** https://diu-library.page.gd/
+🔗 **Live Site 1:** https://diu-library.page.gd/
 
-🔗 **Live Demo 2:** http://diu-library.iceiy.com/
+🔗 **Live Site 2:** http://diu-library.iceiy.com/
+
+---
+
+🔗 **Demo Video:** [youtube.com](https://youtu.be/vXFYtzrmmBY?si=iMgBSpthqcRnzvO0)
 
 ---
 
